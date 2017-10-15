@@ -65,15 +65,21 @@ exammple：
 
 <br />
 <br />
-**模块的查找**  
+**模块的查找**  <br />
 &emsp; 1. 从缓冲中查找  <br />
 &emsp; 2. 从核心模块中查找 <br />
 &emsp; 3. 如果传递给 require() 的模块标识符不是一个核心模块，也没有以 '/' 、 '../' 或 './' 开头，则 Node.js 会从当前模块的父目录开始，尝试从它的 /node_modules 目录里加载模块。  
+
+<br />
 <br />
 你可以通过 console.log(module.paths); 来查看 node 查找的路劲
 
+<br />
+<br />
 如果按确切的文件名没有找到模块，则 Node.js 会尝试带上 .js、.json 或 .node 拓展名再加载。
 
+<br />
+<br />
 如果模块标识符是一个文件夹，那么node会查找其下的 package.json 下的 main 的属性值来定位文件； 如果此文件夹没有 package.json 文件，就会试图加载目录下的 index.js 或 index.node 文件。
 
 
