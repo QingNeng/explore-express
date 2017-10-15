@@ -11,7 +11,6 @@ node 的处理过程如下：
 &emsp; 2. 模块和模块的查找    
 
 <br />
----
 现在，我们先来了解一下这两个概念。
 
 
@@ -68,7 +67,7 @@ exammple：
 <br />
 **模块的查找**  
 &emsp; 1. 从缓冲中查找  
-&emsp; 2. 从核心模块中查找  
+&emsp; 2. 从核心模块中查找   
 &emsp; 3. 如果传递给 require() 的模块标识符不是一个核心模块，也没有以 '/' 、 '../' 或 './' 开头，则 Node.js 会从当前模块的父目录开始，尝试从它的 /node_modules 目录里加载模块。  
 
 你可以通过 console.log(module.paths); 来查看 node 查找的路劲
@@ -83,7 +82,6 @@ exammple：
 [可看](http://nodejs.cn/api/modules.html#modules_exports_shortcut)
 
 <br />
----
 至此， 我们就可以来分析 require('express') 的具体过程了。
 
 分析：  
