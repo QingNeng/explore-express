@@ -76,17 +76,17 @@ exammple：
 
 <br />
 <br />
-如果按确切的文件名没有找到模块，则 Node.js 会尝试带上 .js、.json 或 .node 拓展名再加载。
+note: <br />
+&emsp;&emsp;(1)如果按确切的文件名没有找到模块，则 Node.js 会尝试带上 .js、.json 或 .node 拓展名再加载。
+
+&emsp;&emsp;(2)如果模块标识符是一个文件夹，那么node会查找其下的 package.json 下的 main 的属性值来定位文件； 如果此文件夹没有 package.json 文件，就会试图加载目录下的 index.js 或 index.node 文件。
 
 <br />
 <br />
-如果模块标识符是一个文件夹，那么node会查找其下的 package.json 下的 main 的属性值来定位文件； 如果此文件夹没有 package.json 文件，就会试图加载目录下的 index.js 或 index.node 文件。
-
-
-
 至于 exports 和 module.exports 的区别 &emsp;
 [可看](http://nodejs.cn/api/modules.html#modules_exports_shortcut)
 
+<br />
 <br />
 至此， 我们就可以来分析 require('express') 的具体过程了。
 
@@ -102,5 +102,5 @@ exammple：
 &emsp; 5. 我们发现其只有两行代码，对于“'use strict'” 你可以看[这里](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)，我们来看下一行，我们发现 index.js 通过 module.exports 来暴露自己，而且仍然还引用其他的文件。我们一次根据文件的查找规则， 找到了 node_modules/express/lib/express.js 文件。我们发下 express.js 文件仍有引用其他文件， 但是还多了很多代码。
 
 
-自此，node 查找 express 模块结束。 
+自此，node 查找 express 模块结束。  <br />
 下一集，我们将解析 express.js 文件。
