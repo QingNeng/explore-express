@@ -1,12 +1,15 @@
 ## express.js 的解析
 
+
+预备API知识：
+```javascript
+    Object.create
+    Object.defineProperty
+```
+
+
+
 ---
-
-预备知识：
-
-
-
-
 分析：<br />  
 1. 先是各种 module 的导入。<br />
 2. 我们来看这句： <br />
