@@ -97,7 +97,7 @@ note: <br />
 &emsp;&emsp;&emsp;&emsp; `'use strict';`  
 &emsp;&emsp;&emsp;&emsp; `module.exports = require('./lib/express');`  
 
-&emsp; 5. 我们发现其只有两行代码，对于“'use strict'”你可以看[这里](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)，我们来看下一行，我们发现 index.js 通过 module.exports 来暴露自己，而且仍然还引用其他的文件。我们一次根据文件的查找规则， 找到了 node_modules/express/lib/express.js 文件。我们发下 express.js 文件仍有引用其他文件， 但是还多了很多代码。
+&emsp; 5. 我们发现其只有两行代码，对于“'use strict'”你可以看[这里](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)，我们来看下一行，我们发现 index.js 通过 module.exports 来暴露自己，而且仍然还引用其他的文件。我们根据文件的查找规则,找到了 node_modules/express/lib/express.js 文件,我们发下 express.js 文件仍有引用其他文件，但是还多了很多代码。
 
 
 自此，node 查找 express 模块结束。  <br />
