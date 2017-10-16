@@ -44,7 +44,7 @@ exammple：
 `{
     let bar = 1;
 }`  
-`console.log(bar); // error: foo is not defined  `
+`console.log(bar); // error: bar is not defined  `
 
 // 3  
 `const foo = 1;`  
