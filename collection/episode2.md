@@ -1,4 +1,4 @@
-##express.js 的解析
+## express.js 的解析
 
 ---
 
@@ -20,7 +20,8 @@ exports 和 module.exports 共同指向 createApplication 函数。<br />
 ```
 
 <br />
-3. express.js 的核心代码
+3. express.js 的核心代码 <br />
+
 ![expressCoreCode](https://raw.githubusercontent.com/foobull/explore-express/master/collection/expressCore.png)
 <br />
 4. 然后是把各种函数和对象赋值给 exports 对象。<br />
