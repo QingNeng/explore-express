@@ -216,4 +216,18 @@ console.log(Object.getOwnPropertyNames(createApplication));
               'limit',
               'multipart',
               'staticCache' ]
-*/```
+*/
+```
+
+<br />
+我们只看到 createApplication 的定义，而我们的应用实际用到的是: 
+
+```javascript
+    var app = require('express')();
+```
+
+<br />
+即是createApplication函数的的返回值。<br />
+
+<br />
+所以，下一集我们将探索 createApplication 的返回值。
