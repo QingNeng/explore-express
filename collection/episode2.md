@@ -6,7 +6,7 @@
     Object.create
     Object.defineProperty
 ```
-
+API[讲解](https://github.com/foobull/explore-express/blob/master/apiExample/episode2Preknowledge.js)
 
 
 ---
