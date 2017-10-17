@@ -10,7 +10,7 @@
 [express.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode2.md)**
 
 **episode 3 &emsp;
-[探索createApplication 函数的返回值](https://github.com/foobull/explore-express/blob/master/collection/episode3.md)**
+[探索 createApplication 函数的返回值](https://github.com/foobull/explore-express/blob/master/collection/episode3.md)**
 
 
 
