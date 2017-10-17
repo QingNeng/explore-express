@@ -82,7 +82,8 @@ note: <br />
 
 &emsp;&emsp;(2)如果模块标识符是一个文件夹，那么node会查找其下的 package.json 下的 main 的属性值来定位文件； 如果此文件夹没有 package.json 文件，就会试图加载目录下的 index.js 或 index.node 文件。
 
-至于 exports 和 module.exports 的区别可看[这里](http://nodejs.cn/api/modules.html#modules_exports_shortcut)
+至于 exports 和 module.exports 的区别可看[这里](https://github.com/foobull/explore-express/blob/master/apiExample/exportsWithModuleExports.js)
+或者 [官方](http://nodejs.cn/api/modules.html#modules_exports_shortcut)
 
 <br />
 <br />
