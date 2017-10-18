@@ -154,7 +154,7 @@ function merge(dest, src, redefine) {
 <br />
 <br />
 
-我们来看看 createApplication 中有 mixin 相关的代码
+我们了解 createApplication 中有 mixin 相关的代码
 ```javascript
     // 把 EventEmitter.prototype 的属性赋给 app 函数
     mixin(app, EventEmitter.prototype, false); 
@@ -164,5 +164,81 @@ function merge(dest, src, redefine) {
 ```
 
 
-我们来看看 EventEmitter.prototype 和 proto 对象
+我们先来了解一下 EventEmitter.prototype 和 proto 
 
+```javascript
+    /*----------EventEmitter.prototype----------*/
+
+    var EventEmitter = require('events').EventEmitter;
+    var EventEmitterProto = EventEmitter.prototype;
+    var EventEmitterPropArr = Object.getOwnPropertyNames(EventEmitterProto);
+
+    // 1 EventEmitter.prototype 的类型
+    var ret = Object.prototype.toString.call(EventEmitterProto);
+    console.log(ret); // [object Object]
+
+
+    // 2. EventEmitter.prototype 的属性
+    // console.log(EventEmitterProto);
+    /*
+      output:
+              EventEmitter {
+                domain: undefined,
+                _events: undefined,
+                _maxListeners: undefined,
+                setMaxListeners: [Function: setMaxListeners],
+                getMaxListeners: [Function: getMaxListeners],
+                emit: [Function: emit],
+                addListener: [Function: addListener],
+                on: [Function: addListener],
+                prependListener: [Function: prependListener],
+                once: [Function: once],
+                prependOnceListener: [Function: prependOnceListener],
+                removeListener: [Function: removeListener],
+                removeAllListeners: [Function: removeAllListeners],
+                listeners: [Function: listeners],
+                listenerCount: [Function: listenerCount],
+                eventNames: [Function: eventNames] }
+    */
+
+
+    // console.log(EventEmitterPropArr);
+    /*
+      output:
+              [ 'constructor',
+                'domain',
+                '_events',
+                '_maxListeners',
+                'setMaxListeners',
+                'getMaxListeners',
+                'emit',
+                'addListener',
+                'on',
+                'prependListener',
+                'once',
+                'prependOnceListener',
+                'removeListener',
+                'removeAllListeners',
+                'listeners',
+                'listenerCount',
+                'eventNames' ]
+    */
+
+
+    // 3. EventEmitter.prototype 的原型
+    // console.log(EventEmitter.prototype.__proto__ === Object.prototype);
+
+
+    /*
+      外话：
+          其实 events ==== EventEmitter
+          console.log(EventEmitter === require('events')); // true
+    */
+
+
+    /*
+        最后, 我们知道 app 拥有 EventEmitter 对象除了constructor外的所有属性
+    */
+```
+
+由于 proto (application.js) 代码比较多，所以把它放到[下一集](dskdsldj.com)讲解
