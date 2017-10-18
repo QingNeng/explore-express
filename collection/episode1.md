@@ -51,14 +51,14 @@ exammple：
 `const foo = 1;`  
  `foo = 2;` // TypeError: Assignment to constant variable.
 
-<br />
-<br />
 
 ---
-<br />
+
+<br />    
 
 ##### 模块和模块的查找
-    
+
+
 **模块**  
 在 Node.js 中，文件和模块是一一对应的（每个文件被视为一个独立的模块）。  
 
