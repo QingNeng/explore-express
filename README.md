@@ -12,6 +12,9 @@
 **episode 3 &emsp;
 [探索 createApplication 函数的返回值](https://github.com/foobull/explore-express/blob/master/collection/episode3.md)**
 
+**episode 4 &emsp;
+[application.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode4.md)**
+
 
 
 
