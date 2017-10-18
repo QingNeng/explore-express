@@ -12,6 +12,7 @@ node 的处理过程如下：
 
 ---
 <br />
+
 现在，我们先来了解一下这两个概念。
 
 
@@ -50,6 +51,12 @@ exammple：
 `const foo = 1;`  
  `foo = 2;` // TypeError: Assignment to constant variable.
 
+<br />
+<br />
+
+---
+<br />
+
 ##### 模块和模块的查找
     
 **模块**  
@@ -87,6 +94,8 @@ note: <br />
 
 <br />
 <br />
+
+----
 至此， 我们就可以来分析 require('express') 的具体过程了  
 
 分析：  
