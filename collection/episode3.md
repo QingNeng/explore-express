@@ -144,5 +144,25 @@ function merge(dest, src, redefine) {
   // 返回目标对象
   return dest
 }
+
+
+// 现在，这个函数的目的已经很明显了，就是把第二对象的属性及属性描述符复制给第一个。
+
 /*----------------merge-descriptors---end---------------*/
 ```
+
+<br />
+<br />
+
+我们来看看 createApplication 中有 mixin 相关的代码
+```javascript
+    // 把 EventEmitter.prototype 的属性赋给 app 函数
+    mixin(app, EventEmitter.prototype, false); 
+
+    // 把 proto 的属性赋给 app 函数， 这里 proto 引用 application 包
+    mixin(app, proto, false);
+```
+
+
+我们来看看 EventEmitter.prototype 和 proto 对象
+
