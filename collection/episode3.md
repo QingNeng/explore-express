@@ -164,7 +164,7 @@ function merge(dest, src, redefine) {
 ```
 
 
-我们先来了解一下 EventEmitter.prototype 和 proto 
+我们来解一下 EventEmitter.prototype 和 proto 
 
 ```javascript
     /*----------EventEmitter.prototype----------*/
@@ -241,4 +241,4 @@ function merge(dest, src, redefine) {
     */
 ```
 
-由于 proto (application.js) 代码比较多，所以把它放到[下一集](dskdsldj.com)讲解
+由于 proto (application.js) 代码比较多，所以把它放到[下一集](https://github.com/foobull/explore-express/blob/master/collection/episode4.md)讲解
