@@ -97,7 +97,7 @@ o.foo(); // 1
 
 ```
 
-
+接下来我们继续 [回到](https://github.com/foobull/explore-express/blob/master/collection/episode5.md) createApplication 的定义
 
 
 
