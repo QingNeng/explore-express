@@ -1,5 +1,4 @@
 /*-------各种 module 的导入-------*/
-
 var finalhandler = require('finalhandler');
 var Router = require('./router');
 var methods = require('methods');
@@ -26,7 +25,7 @@ var trustProxyDefaultSymbol = '@@symbol:trust_proxy_default';
 
 /**
  * 以下都是给 app 设置各种属性， 我们先不管这些属性的功能
- * 我们在这个文件的末输出一下 app 有那些属性
+ * 我们在这个文件的末输出一下 app 有哪些属性
  */
 
 app.init = function init() {
@@ -303,6 +302,7 @@ methods.forEach(function(method){
   };
 });
 
+
 app.all = function all(path) {
   this.lazyrouter();
 
@@ -401,56 +401,6 @@ function tryRender(view, options, callback) {
     callback(err);
   }
 }
-
-
-
-/**
- * 一些注意点
- */
- 
-/*--------------------methods start-------------------*/
-var http = require('http');
-
-module.exports = getCurrentNodeMethods() || getBasicNodeMethods();
-
-function getCurrentNodeMethods() {
-  return http.METHODS && http.METHODS.map(function lowerCaseMethod(method) {
-    return method.toLowerCase();
-  });
-}
-
-
-function getBasicNodeMethods() {
-  return [
-    'get',
-    'post',
-    'put',
-    'head',
-    'delete',
-    'options',
-    'trace',
-    'copy',
-    'lock',
-    'mkcol',
-    'move',
-    'purge',
-    'propfind',
-    'proppatch',
-    'unlock',
-    'report',
-    'mkactivity',
-    'checkout',
-    'merge',
-    'm-search',
-    'notify',
-    'subscribe',
-    'unsubscribe',
-    'patch',
-    'search',
-    'connect'
-  ];
-}
-/*--------------------methods end-------------------*/
 
 
 /**
