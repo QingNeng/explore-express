@@ -15,7 +15,7 @@
 **episode 4 &emsp;
 [application.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode4.md)**
 
-**episode 4 &emsp;
+**episode 5 &emsp;
 [继续分析 createApplication 的定义](https://github.com/foobull/explore-express/blob/master/collection/episode5.md)**
 
 
