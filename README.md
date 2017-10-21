@@ -18,6 +18,9 @@
 **episode 5 &emsp;
 [继续分析 createApplication 的定义](https://github.com/foobull/explore-express/blob/master/collection/episode5.md)**
 
+**episode 6 &emsp;
+[request.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode6.md)**
+
 
 
 
