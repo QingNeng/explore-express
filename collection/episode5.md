@@ -110,4 +110,6 @@ console.log(app.subClass.app === app); // true
 ```
 
 <br />
-接下来，我们分析 request.js 和 response.js 文件
+
+接下来，我们分析 [request.js](https://github.com/foobull/explore-express/blob/master/collection/episode6.md)
+ 和 response.js 文件
