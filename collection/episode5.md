@@ -58,18 +58,18 @@ function createApplication() {
  * 我们来看看例子：
  */
 
-var supClass = {};
-var subClass = null;
+var supObj = {};
+var subObj = null;
 
-subClass = Object.create(supClass, {
-  subClassProp: {
-    value: 'subClass of property',
+subObj = Object.create(supObj, {
+  subObjProp: {
+    value: 'subObj of property',
     enumerable: true
   }
 });
 
-console.log(subClass.__proto__ === supClass); // true
-console.log(subClass.subClassProp); // subClass of property
+console.log(subObj.__proto__ === supObj); // true
+console.log(subObj.subObjProp); // subObj of property
 ```
 
 
@@ -96,17 +96,17 @@ app.response = Object.create(res, {
 
 我们来看一段代码：
 ```javascript
-var supClass = {};
+var supObj = {};
 var app = {};
 
-app.subClass = Object.create(supClass, {
+app.subObj = Object.create(supObj, {
   app: {
     value: app,
     enumerable: true
   }
 });
 
-console.log(app.subClass.app === app); // true
+console.log(app.subObj.app === app); // true
 ```
 
 <br />
