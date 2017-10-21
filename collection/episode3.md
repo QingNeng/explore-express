@@ -29,8 +29,7 @@ function createApplication() {
 很明显，返回的是一个叫做 app 的函数，不过经过了一些处理 <br />
 经过的处理如下：<br />
     &emsp;&emsp;&emsp;1.app 经过 mixni 处理<br/>
-    &emsp;&emsp;&emsp;2.给 a
-    pp 添加属性<br />
+    &emsp;&emsp;&emsp;2.使用 Object.create 给 app 的属性设置原型<br />
     &emsp;&emsp;&emsp;3.调用 app.init 方法 <br />
 
 
