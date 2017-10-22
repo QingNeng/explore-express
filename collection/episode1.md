@@ -1,6 +1,9 @@
 ## express 从何而来
 
-当你在应用中写：  var express = require('express'); 
+当你在应用中写：  
+```javascript
+var express = require('express'); 
+```
 
 node 的处理过程如下：  
 &emsp; 1. 声明一个变量 express  
@@ -25,32 +28,33 @@ node 的处理过程如下：
 &emsp;&emsp;const 声明的变量所引用的地址不能被改变，而且 const 在声明变量的同时必须初始化(var 和 let 可以只声明不初始化)
 
 exammple：  
+```javascript
 // 1.  
-`var foo;`  
-`var foo;`
+var foo;  
+var foo;
 
-`let bar;`  
-`let bar;`  // SyntaxError: Identifier 'bar' has already been declared
+let bar;  
+let bar;  // SyntaxError: Identifier 'bar' has already been declared
 
-`const baz = 1;`  
-`const baz = 2;` // SyntaxError: Identifier 'baz' has already been declared
+const baz = 1;  
+const baz = 2; // SyntaxError: Identifier 'baz' has already been declared
 
 
 // 2.  
-`{
+{
     var foo = 1;  
-}`  
-`console.log(foo); // 1`
+}  
+console.log(foo); // 1
 
-`{
+{
     let bar = 1;
-}`  
-`console.log(bar); // error: bar is not defined  `
+}  
+console.log(bar); // error: bar is not defined  
 
 // 3  
-`const foo = 1;`  
- `foo = 2;` // TypeError: Assignment to constant variable.
-
+const foo = 1;  
+ foo = 2; // TypeError: Assignment to constant variable.
+```
 
 ---
 
@@ -90,10 +94,11 @@ note: <br />
 至于 exports 和 module.exports 的区别可看[这里](https://github.com/foobull/explore-express/blob/master/apiExample/exportsWithModuleExports.js)
 或者 [官方](http://nodejs.cn/api/modules.html#modules_exports_shortcut)
 
+----
+
 <br />
 <br />
 
-----
 至此， 我们就可以来分析 require('express') 的具体过程了  
 
 分析：  
