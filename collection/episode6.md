@@ -99,7 +99,7 @@ console.log(events.prototype.__proto__ === Object.prototype); // true
 
 
 <br />
-
+<br />
 好了，我们下一集将来看看 response.js 文件。
 
 
