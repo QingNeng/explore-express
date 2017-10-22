@@ -21,6 +21,9 @@
 **episode 6 &emsp;
 [request.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode6.md)**
 
+**episode 7 &emsp;
+[response.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode7.md)**
+
 
 
 
