@@ -52,55 +52,83 @@ console.log(subClass.prototype.__proto__ === supClass.prototype); // true
 
 我们现在来了解一下 Stream.Readable.prototype 对象：
 ```javascript
-var Stream = require('stream');
+var http = require('http');
+var Stream  = require('stream');
+var events = require('events');
 
-console.log(Stream.prototype); // Stream { pipe: [Function] }
+var bool = http.IncomingMessage.prototype.__proto__ === Stream.Readable.prototype;
+var bool2 = http.IncomingMessage.prototype.__proto__.__proto__ === Stream.prototype;
+var bool3 = http.IncomingMessage.prototype.__proto__.__proto__.__proto__ === events.prototype;
 
-//我们发现只有一个 pipe 函数
+console.log(bool, bool2, bool3); // true ture true
+console.log(events.prototype.__proto__ === Object.prototype); // ture
 
-// 我们再来看看他的原型：
-console.log(Stream.prototype.__proto__);
+var ret = Object.keys(http.IncomingMessage.prototype);
+var ret2 = Object.keys(Stream.Readable.prototype);
+var ret3 = Object.keys(Stream.prototype);
+var ret4 = Object.keys(events.prototype);
+
+var allProps = ret.concat(ret2, ret3, ret4);
+console.log(allProps);
+
 /*
-  outpuut:
-            EventEmitter {
-              domain: undefined,
-              _events: undefined,
-              _maxListeners: undefined,
-              setMaxListeners: [Function: setMaxListeners],
-              getMaxListeners: [Function: getMaxListeners],
-              emit: [Function: emit],
-              addListener: [Function: addListener],
-              on: [Function: addListener],
-              prependListener: [Function: prependListener],
-              once: [Function: once],
-              prependOnceListener: [Function: prependOnceListener],
-              removeListener: [Function: removeListener],
-              removeAllListeners: [Function: removeAllListeners],
-              listeners: [Function: listeners],
-              listenerCount: [Function: listenerCount],
-              eventNames: [Function: eventNames] }
+  output:
+          [ 'setTimeout',
+            'read',
+            '_read',
+            'destroy',
+            '_addHeaderLines',
+            '_addHeaderLine',
+            '_dump',
+            'destroy',
+            '_undestroy',
+            '_destroy',
+            'push',
+            'unshift',
+            'isPaused',
+            'setEncoding',
+            'read',
+            '_read',
+            'pipe',
+            'unpipe',
+            'on',
+            'addListener',
+            'resume',
+            'pause',
+            'wrap',
+            'pipe',
+            'domain',
+            '_events',
+            '_maxListeners',
+            'setMaxListeners',
+            'getMaxListeners',
+            'emit',
+            'addListener',
+            'on',
+            'prependListener',
+            'once',
+            'prependOnceListener',
+            'removeListener',
+            'removeAllListeners',
+            'listeners',
+            'listenerCount',
+            'eventNames' ]
  */
-
- var events = require('events');
- // output equal above content
- console.log(events.prototype);
-
-// 我们发现 Stream.prototyp 继承自 events.prototype
-console.log(Stream.prototype.__proto__ === events.prototype); // true
-
-// 那么 events.prototype 继承自谁呢？
-console.log(events.prototype.__proto__ === Object.prototype); // true
-
 
 ```
 
-所以，我们得出的关系为：('->': 继承自)<br />
-    http.IncomingMessage.prototype <br />
-        &emsp;-> Stream.Readable.prototype <br />
-        &emsp;&emsp;-> events.prototype  <br />
-        &emsp;&emsp;&emsp;-> Object.prototype <br />
-        &emsp;&emsp;&emsp;&emsp;-> null
+<br />
+<br />
+所以，我们得出的关系为：('->': 继承自) 
 
+```javascript
+    http.IncomingMessage.prototype
+        -> Stream.Readable.prototype
+          -> Stream.prototyp 
+            -> events.prototype
+              -> Object.prototype
+                -> null
+```
 
 <br />
 <br />
