@@ -20,6 +20,7 @@ var req = Object.create(http.IncomingMessage.prototype)
 ```javascript
 util.inherits(IncomingMessage, Stream.Readable);
 ```
+<br />
 
 由此，我们知道 IncomingMessage.prototype 继承自 Stream.Readable.prototype <br />
 如果你不了解 util.inherits 的使用, 看下面的代码
@@ -42,9 +43,63 @@ subClass.prototype.f(); // 'I\'m from supClass'
 console.log(subClass.prototype.__proto__ === supClass.prototype); // true
 ```
 
+由以上代码我们知道，IncomingMessage.prototype 继承自 Stream.Readable.prototype
+<br />
+
+我们现在来了解一下 Stream.Readable.prototype 对象：
+```javascript
+var Stream = require('stream');
+
+console.log(Stream.prototype); // Stream { pipe: [Function] }
+
+//我们发现只有一个 pipe 函数
+
+// 我们再来看看他的原型：
+console.log(Stream.prototype.__proto__);
+/*
+  outpuut:
+            EventEmitter {
+              domain: undefined,
+              _events: undefined,
+              _maxListeners: undefined,
+              setMaxListeners: [Function: setMaxListeners],
+              getMaxListeners: [Function: getMaxListeners],
+              emit: [Function: emit],
+              addListener: [Function: addListener],
+              on: [Function: addListener],
+              prependListener: [Function: prependListener],
+              once: [Function: once],
+              prependOnceListener: [Function: prependOnceListener],
+              removeListener: [Function: removeListener],
+              removeAllListeners: [Function: removeAllListeners],
+              listeners: [Function: listeners],
+              listenerCount: [Function: listenerCount],
+              eventNames: [Function: eventNames] }
+ */
+
+ var events = require('events');
+ // output equal above content
+ console.log(events.prototype);
+
+// 我们发现 Stream.prototyp 继承自 events.prototype
+console.log(Stream.prototype.__proto__ === events.prototype); // true
+
+// 那么 events.prototype 继承自谁呢？
+console.log(events.prototype.__proto__ === Object.prototype); // true
 
 
+```
+
+所以，我们得出的关系为：('->': 继承自)<br />
+    http.IncomingMessage.prototype <br />
+        &emsp;-> Stream.Readable.prototype <br />
+        &emsp;&emsp;-> events.prototype  <br />
+        &emsp;&emsp;&emsp;-> Object.prototype <br />
+        &emsp;&emsp;&emsp;&emsp;-> null
 
 
+<br />
+
+好了，我们下一集将来看看 response.js 文件。
 
 
