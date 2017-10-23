@@ -1,4 +1,4 @@
-### 调用 app.init 方法
+### app.init 方法的调用
 
 从第四集我们发现，app.init 方法在 application.js 中定义。
 ```javascript
@@ -20,7 +20,7 @@ app.init = function init() {
   this.defaultConfiguration();
 ```
 
-我们来分析 defaultConfiguration 函数：
+defaultConfiguration 函数的定义：
 ```javascript
 app.defaultConfiguration = function defaultConfiguration() {
   var env = process.env.NODE_ENV || 'development';
@@ -81,5 +81,64 @@ app.defaultConfiguration = function defaultConfiguration() {
 };
 ```
 
+<br />
+<br />
+
+defaultConfiguration 函数的分析：
+涉及到的一些重要函数：
+1. enable
+2. set
+3. debug
+4. setPrototypeOf
+
+我们一个个的来分析这些函数：<br />
+
+**enable**
+```javascript
+app.enable = function enable(setting) {
+  // 调用 set 方法， 第二个参数位 true.
+  return this.set(setting, true);
+};
+```
+
+<br />
+<br />
+
+**set**
+```javascript
+app.set = function set(setting, val) {
+  if (arguments.length === 1) {
+    // app.get(setting)
+    return this.settings[setting];
+  }
+
+  debug('set "%s" to %o', setting, val);
+
+  // set value
+  this.settings[setting] = val;
+
+  // trigger matched settings
+  switch (setting) {
+    case 'etag':
+      this.set('etag fn', compileETag(val));
+      break;
+    case 'query parser':
+      this.set('query parser fn', compileQueryParser(val));
+      break;
+    case 'trust proxy':
+      this.set('trust proxy fn', compileTrust(val));
+
+      // trust proxy inherit back-compat
+      Object.defineProperty(this.settings, trustProxyDefaultSymbol, {
+        configurable: true,
+        value: false
+      });
+
+      break;
+  }
+
+  return this;
+};
+```
 
 
