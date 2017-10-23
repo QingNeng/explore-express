@@ -24,6 +24,9 @@
 **episode 7 &emsp;
 [response.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode7.md)**
 
+**episode 8 &emsp;
+[app.int 方法的调用](https://github.com/QingNeng/explore-express/blob/master/collection/episode8.md)**
+
 
 
 
