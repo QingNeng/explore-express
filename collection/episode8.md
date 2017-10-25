@@ -1,5 +1,7 @@
 ### app.init 方法的调用
 
+---
+
 从第四集我们发现，app.init 方法在 application.js 中定义。
 ```javascript
 // express/lib/application.js
@@ -88,8 +90,7 @@ defaultConfiguration 函数的分析：
 涉及到的一些重要函数：
 1. enable
 2. set
-3. debug
-4. setPrototypeOf
+3. setPrototypeOf
 
 我们一个个的来分析这些函数：<br />
 
@@ -140,5 +141,19 @@ app.set = function set(setting, val) {
   return this;
 };
 ```
+我们发现set方法很简单，就是根据参数来判断进行不同的操作。
+1. 如果是一个参数，返回 app.settings[参数]；
+2. 如果是两个参数，app.settings[第一个参数] = 第二个参数位
 
+
+<br />
+<br />
+
+**setPrototypeOf**<br />
+这个函数就是给对象设置原型。
+
+<br />
+
+到目前，我们已经分析了 app 函数的定义<br />
+接下来，我们将分析 app 的属性。
 
