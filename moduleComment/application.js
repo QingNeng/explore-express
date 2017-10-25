@@ -406,10 +406,10 @@ function tryRender(view, options, callback) {
 /**
  * app 的属性
  */
-var appPropArr = Object.getOwnPropertyNames(app);
-var msg = 'app 共有 ' + appPropArr.length + ' 个属性';
+//var appPropArr = Object.getOwnPropertyNames(app);
+//var msg = 'app 共有 ' + appPropArr.length + ' 个属性';
 
-console.log(msg); //app 共有 51 个属性
+//console.log(msg); //app 共有 51 个属性
 
 // console.log(appPropArr);
 
