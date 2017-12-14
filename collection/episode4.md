@@ -6,7 +6,7 @@
 
 <br />
 
-**我们来分析标注为 attention 的代码，先来看看 methos 模块的代码**
+**我们来分析标注为 attention 的代码，先来看看 method 模块的代码**
 ```javascript
 /*--------------------methods start-------------------*/
 var http = require('http');
