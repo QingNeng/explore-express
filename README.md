@@ -25,10 +25,10 @@
 [response.js 的解析](https://github.com/foobull/explore-express/blob/master/collection/episode7.md)**
 
 **episode 8 &emsp;
-[app.int 方法的调用](https://github.com/QingNeng/explore-express/blob/master/collection/episode8.md)**
+[app.int 方法的调用](https://github.com/Williris/explore-express/blob/master/collection/episode8.md)**
 
 **episode 9 &emsp;
-[app 的属性](https://github.com/QingNeng/explore-express/blob/master/collection/episode9.md)**
+[app 的属性](https://github.com/Williris/explore-express/blob/master/collection/episode9.md)**
 
 
 
